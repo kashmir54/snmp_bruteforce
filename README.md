@@ -1,16 +1,16 @@
 # snmp_bruteforce
 
 SNMP bruteforce script with customizable settings. Supports SNMPv1 and SNMPv2c.
+Built in python3
 
 ## Usage
 
-usage: snmp_bruteforce.py [-h] --wordlist WORDLIST --ip IP [--snmp-version SNMP_VERSION] [--port PORT] [--timeout TIMEOUT]
+```bash
+snmp_bruteforce.py [-h] --wordlist WORDLIST --ip IP [--snmp-version SNMP_VERSION] [--port PORT] [--timeout TIMEOUT]
 
 SNMP community bruteforce by kashmir54
 
 options:
-
-```bash
   -h, --help            show this help message and exit
 
   --wordlist WORDLIST, -w WORDLIST
@@ -26,19 +26,17 @@ options:
                         Timeout for the SNMP calls [2]
 ```
 
-Recommended wordlist: [Seclist SNMP](https://github.com/danielmiessler/SecLists/blob/master/Discovery/SNMP/common-snmp-community-strings.txt)
+Recommended wordlist: [Seclists SNMP](https://github.com/danielmiessler/SecLists/blob/master/Discovery/SNMP/common-snmp-community-strings.txt)
 
 
 ## Examples
 
 ```bash
-# SNMPv2c at 10.129.228.102 port 161 with timeout 1 second
-
+# SNMPv2c at 10.129.228.102 port 161 with 1 second timeout 
 python3 snmp_bruteforce.py -i 10.129.228.102 -t 1 -w /usr/share/wordlists/SecLists/Discovery/SNMP/common-snmp-community-strings.txt
 
 
-# SNMPv1 at 10.129.228.102 port 1616 with timeout 3 second
-
+# SNMPv1 at 10.129.228.102 port 1616 with 3 seconds timeout 
 python3 snmp_bruteforce.py -i 10.129.228.102 -p 1616 -v 1 -t 3 -w /usr/share/wordlists/SecLists/Discovery/SNMP/common-snmp-community-strings.txt
 
 ```
